@@ -1,0 +1,17 @@
+設計
+
+コンポーネント
+3つ
+1.画面左のノート一覧を表示する物
+2.右上のフォーム画面
+3.右下のノート画面
+
+ローカルストレージを用いて開発
+保存する値
+{
+  id:number or string,
+  title: string,
+  content: string,
+  uploadDay: date,
+}..
+

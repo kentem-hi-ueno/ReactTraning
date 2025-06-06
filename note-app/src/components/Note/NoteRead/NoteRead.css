@@ -1,0 +1,5 @@
+.noteRead {
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(140, 168, 190);
+}

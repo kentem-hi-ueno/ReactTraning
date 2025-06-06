@@ -1,0 +1,47 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  background-color: #daa055;
+  width: 100%;
+  color: #eee;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pokemonList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  place-items: center;
+}
+
+.btn {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn button {
+  padding: 13px 32px;
+  background-color: #599ff0;
+  border: none;
+  box-shadow: 0px 0px 22px -5px #777777;
+  border-radius: 10px;
+  color: #eee;
+}
+
+.btn button:hover {
+  transform: translateY(5px);
+  box-shadow: none;
+}

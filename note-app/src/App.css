@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: aliceblue;
+}
+#root {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+h2 {
+  margin: 0;
+}

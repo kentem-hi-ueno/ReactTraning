@@ -1,0 +1,36 @@
+.noteLists {
+  height: 100vh;
+}
+
+.listHead {
+  padding: 8px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.noteHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noteList {
+  overflow-y: scroll;
+  height: calc(100% - 100px);
+}
+
+.note {
+  padding: 2px;
+}
+
+.noteContent {
+  height: 1.5rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.current {
+  background-color: dimgray;
+}
