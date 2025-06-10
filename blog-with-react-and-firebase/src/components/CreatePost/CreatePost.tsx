@@ -18,7 +18,10 @@ type PostForm = {
   content: string;
 };
 
+// Comment(Chiba): ここでpropsは({ isAuth }: CreatePostProps)のように分割代入して使うのが良いです。
+// Comment(Chiba): また、そもそもisAuthを受け取るのではなく、auth.currentUserが存在するかどうかで判断するのが良いと思います。
 export const CreatePost: React.FC<CreatePostProps> = (isAuth) => {
+  // Comment(Chiba): React Hook Formへのチャレンジとても良いですね！
   const {
     register,
     handleSubmit,
@@ -33,6 +36,7 @@ export const CreatePost: React.FC<CreatePostProps> = (isAuth) => {
   }, [isAuth]);
   const uploadBlog: SubmitHandler<PostForm> = async (post: PostForm) => {
     if (auth.currentUser) {
+      // Comment(Chiba): 実際のアプリではこういう非同期でエラーが出た際にどうするかをハンドリングします。
       await addDoc(collection(db, "posts"), {
         title: post.title,
         content: post.content,
@@ -45,6 +49,8 @@ export const CreatePost: React.FC<CreatePostProps> = (isAuth) => {
     navigate("/");
   };
 
+  // Comment(Chiba): eにany型を書かなければSubmitErrorHandler<PostForm>で定義された方が自動的にeに適用されるのでその方が良いと思います。
+  // Comment(Chiba): また関数名は「handleInvalid」の方が良いかと思います。
   const isInValid: SubmitErrorHandler<PostForm> = (e: any) => {
     console.log(e);
     console.log("Fail Login");

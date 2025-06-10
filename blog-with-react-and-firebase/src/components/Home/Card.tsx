@@ -2,6 +2,7 @@ import React from "react";
 import { auth, db } from "../../firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 
+// Comment(Chiba): このPostという型はHome.tsxの方で定義されているので、そこからインポートするのが良いと思います。(逆にこちらで定義してHome.tsxでインポートしても良いです。)
 type Post = {
   id: string;
   title: string;
@@ -14,9 +15,14 @@ type Post = {
 
 type CardProps = {
   post: Post;
+  // Comment(Chiba): この「getPosts」はイベントらしく「onDelete」のような名前の方が良いと思います。あるいは「onPostDelete」ですね。
   getPosts: () => void;
 };
 const Card: React.FC<CardProps> = ({ post, getPosts }) => {
+  // Comment(Chiba): Reactではletを使うとバグが発生するリスクが高まるので、余程の理由が無い限り使わない方が良いと思います。
+  // Comment(Chiba): 今回のケースでは以下のような書き方の方が良いと思います。(あえて空文字を定義するより無いことを明確にしたundefinedを返すほうが理想的です。)
+  // const userId = auth.currentUser?.uid;
+
   let userId = "";
   if (auth.currentUser) {
     userId = auth.currentUser.uid;

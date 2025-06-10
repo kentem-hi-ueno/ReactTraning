@@ -2,6 +2,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 type LoginProps = {
+  // Comment(Chiba): 「onSignIn」などのようにイベントっぽい名前にした方がきれいですね。
   setIsAuth: (bool: boolean) => void;
 };
 export const Login: React.FC<LoginProps> = ({ setIsAuth }) => {

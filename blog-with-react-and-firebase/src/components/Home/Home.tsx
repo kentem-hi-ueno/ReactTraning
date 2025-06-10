@@ -8,6 +8,7 @@ type Post = {
   id: string;
   title: string;
   content: string;
+  // Comment(Chiba): 「postAcount」ではなく「postAccount」の方が良いですね。(スペルミスを教えてくれるCode Spell Checkerというツールがあるので、調べてみてください。)
   postAcount: {
     username: string;
     id: string;

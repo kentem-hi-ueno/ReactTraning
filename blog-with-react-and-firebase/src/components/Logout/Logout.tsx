@@ -1,6 +1,7 @@
 import { auth, signOut } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 type LogoutProps = {
+  // Comment(Chiba): 「onSignOut」などのようにイベントっぽい名前にした方がきれいですね。
   setIsAuth: (bool: boolean) => void;
 };
 export const Logout: React.FC<LogoutProps> = ({ setIsAuth }) => {

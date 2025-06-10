@@ -9,8 +9,10 @@ import {
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 type NavbarProps = {
+  // Comment(Chiba): ログインしてるかどうかであれば「loginFlag」よりも「isLoggedIn」の方がわかりやすいかもしれません。
   loginFlag: boolean;
 };
+// Comment(Chiba): React.FCは使わないケースもあるので、実際のプロジェクトでは注意して見てみてください。
 const Navbar: React.FC<NavbarProps> = ({ loginFlag }) => {
   return (
     <nav className="navBar">
